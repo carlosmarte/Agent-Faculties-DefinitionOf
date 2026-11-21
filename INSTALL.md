@@ -1,6 +1,6 @@
 # Installing the Definition of X (DoX) Faculties
 
-DoX ships as three skill folders. Each folder contains a `SKILL.md` plus supporting files (`INTERVIEW.md`, `assets/`), so **always install the whole folder**, never just `SKILL.md`. `definition-of-ready/` is at the repository root; `definition-of-x/` and `definition-of-done/` are under `skills/`.
+DoX ships as three skill folders under `skills/`. Each folder contains a `SKILL.md` plus supporting files (`INTERVIEW.md`, `assets/`), so **always install the whole folder**, never just `SKILL.md`.
 
 | Faculty | Role |
 |---|---|
@@ -8,7 +8,7 @@ DoX ships as three skill folders. Each folder contains a `SKILL.md` plus support
 | `definition-of-ready` | Pre-implementation gate. Writes `ready.md`. |
 | `definition-of-done` | Done criteria and post-implementation gate. Writes `done.md`. |
 
-Install **all three**. The orchestrator links to the other two by relative path, so preserve the repository's directory layout when installing.
+Install **all three**. The orchestrator links to the other two by relative path, so they must remain siblings in the same skills directory.
 
 In the commands below, set `FACULTIES` to the repository root:
 
@@ -16,10 +16,7 @@ In the commands below, set `FACULTIES` to the repository root:
 FACULTIES=/path/to/Agent-Faculties-DefinitionOf
 SKILLS=(definition-of-x definition-of-ready definition-of-done)
 skill_dir() {
-  case "$1" in
-    definition-of-ready) printf '%s\n' "$FACULTIES/definition-of-ready" ;;
-    *) printf '%s\n' "$FACULTIES/skills/$1" ;;
-  esac
+  printf '%s\n' "$FACULTIES/skills/$1"
 }
 ```
 

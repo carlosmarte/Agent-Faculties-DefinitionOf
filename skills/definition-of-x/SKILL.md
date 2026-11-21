@@ -31,7 +31,7 @@ Guide the user from "I have a request" to "verified and handed off" through two 
 
 This faculty owns **sequencing, the getting-started conversation, and artifact bookkeeping**. The gates themselves live in:
 
-- [`definition-of-ready`](../../definition-of-ready/SKILL.md) (entry: [`INTERVIEW.md`](../../definition-of-ready/INTERVIEW.md))
+- [`definition-of-ready`](../definition-of-ready/SKILL.md) (entry: [`INTERVIEW.md`](../definition-of-ready/INTERVIEW.md))
 - [`definition-of-done`](../definition-of-done/SKILL.md) (entry: [`INTERVIEW.md`](../definition-of-done/INTERVIEW.md))
 
 ---
@@ -91,7 +91,7 @@ Only **after** the choice:
 
 ## Step 1 — Definition of Ready
 
-Follow [`definition-of-ready/INTERVIEW.md`](../../definition-of-ready/INTERVIEW.md), then its gate.
+Follow [`definition-of-ready/INTERVIEW.md`](../definition-of-ready/INTERVIEW.md), then its gate.
 
 - **READY:** Show the brief and the `ready.md` path, then ask "Continue to the Definition of Done?" If yes, go to Step 2. If no, end with the Final Summary.
 - **NOT READY:** Present the gaps with their owners and defaults. Offer three choices: answer the gaps now (re-run the gate), **accept all proposed defaults** (re-run the gate), or stop here with the artifact saved as the backlog record.
