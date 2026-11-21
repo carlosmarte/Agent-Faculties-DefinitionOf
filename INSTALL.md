@@ -13,7 +13,7 @@ Install **all three**. The orchestrator links to the other two by relative path 
 In the commands below, set `FACULTIES` to this folder:
 
 ```sh
-FACULTIES=/path/to/definition-of-x/faculties
+FACULTIES=/path/to/definition-of-x
 SKILLS=(definition-of-x definition-of-ready definition-of-done)
 ```
 
@@ -98,8 +98,8 @@ Skills load on demand when the request matches their description. To make every 
 
 | Harness | Context file | Add |
 |---|---|---|
-| Claude Code | `CLAUDE.md` (project) or `~/.claude/CLAUDE.md` | `@/path/to/faculties/AGENT.md` |
-| Gemini CLI | `GEMINI.md` (project) or `~/.gemini/GEMINI.md` | `@/path/to/faculties/AGENT.md` |
+| Claude Code | `CLAUDE.md` (project) or `~/.claude/CLAUDE.md` | `@/path/to/AGENT.md` |
+| Gemini CLI | `GEMINI.md` (project) or `~/.gemini/GEMINI.md` | `@/path/to/AGENT.md` |
 | Copilot | `.github/copilot-instructions.md` or `AGENTS.md` | Paste the contents of `AGENT.md` (no import syntax) |
 
 ---

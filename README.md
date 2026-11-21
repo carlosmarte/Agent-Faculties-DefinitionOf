@@ -40,14 +40,14 @@ See [`INSTALL.md`](INSTALL.md) for Claude Code, Gemini CLI, and GitHub Copilot. 
 
 ```sh
 # Claude Code (user-level)
-ln -s "$PWD/faculties/definition-of-x"     ~/.claude/skills/definition-of-x
-ln -s "$PWD/faculties/definition-of-ready" ~/.claude/skills/definition-of-ready
-ln -s "$PWD/faculties/definition-of-done"  ~/.claude/skills/definition-of-done
+ln -s "$PWD/definition-of-x"     ~/.claude/skills/definition-of-x
+ln -s "$PWD/definition-of-ready" ~/.claude/skills/definition-of-ready
+ln -s "$PWD/definition-of-done"  ~/.claude/skills/definition-of-done
 ```
 
 ## Adding a faculty
 
-1. Create `faculties/<faculty-name>/SKILL.md` (lowercase, hyphen-separated name).
+1. Create `<faculty-name>/SKILL.md` (lowercase, hyphen-separated name).
 2. Set frontmatter `name` to the directory name and write a `description` (1024 characters or fewer) that says what the faculty does and when to use it.
 3. Optionally add an `INTERVIEW.md` entry point and `assets/` templates for any artifact it produces.
 4. Add a row to the table above.
