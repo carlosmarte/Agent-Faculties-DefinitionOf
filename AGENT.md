@@ -19,9 +19,9 @@ DoX wraps every unit of work in two Agile quality gates, each backed by a persis
 
 | Skill | Use it when | Entry point |
 |---|---|---|
-| `definition-of-x` | Getting started, or unsure which gate applies. Asks the user **DoR or DoD?** and routes. | `definition-of-x/SKILL.md` |
+| `definition-of-x` | Getting started, or unsure which gate applies. Asks the user **DoR or DoD?** and routes. | `skills/definition-of-x/SKILL.md` |
 | `definition-of-ready` | A new request or issue is about to be implemented | `definition-of-ready/INTERVIEW.md` → `SKILL.md` |
-| `definition-of-done` | Defining the finish line, or about to claim work is complete, commit, or open a PR | `definition-of-done/INTERVIEW.md` → `SKILL.md` |
+| `definition-of-done` | Defining the finish line, or about to claim work is complete, commit, or open a PR | `skills/definition-of-done/INTERVIEW.md` → `SKILL.md` |
 
 ## When To Trigger
 

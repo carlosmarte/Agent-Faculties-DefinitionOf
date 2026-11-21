@@ -24,7 +24,7 @@ Do **not** begin implementation on vague, untestable, or unbounded requests. Sto
 
 - **No `ready.md` artifact yet for this work item?** Start with [`INTERVIEW.md`](INTERVIEW.md). It is the first interaction with the user and gathers the inputs for Phases 1–2.
 - **Artifact already exists?** Read it, re-score only the gates that were `FAIL` (or that the user says have changed), and update the same file.
-- **Driven by the [`definition-of-x`](../definition-of-x/SKILL.md) orchestrator?** It handles slugs and sequencing. Follow its handoff.
+- **Driven by the [`definition-of-x`](../skills/definition-of-x/SKILL.md) orchestrator?** It handles slugs and sequencing. Follow its handoff.
 
 ---
 
@@ -130,5 +130,5 @@ Persist the outcome of every evaluation, regardless of path:
 
 ## Related Faculties
 
-- **[`definition-of-done`](../definition-of-done/SKILL.md):** The post-implementation counterpart. The Readiness Brief's *Acceptance Criteria*, *Edge Cases*, and *Verification Plan* seed `done.md`, which the Definition of Done gate must empirically verify before the work is declared complete.
-- **[`definition-of-x`](../definition-of-x/SKILL.md):** The orchestrator that runs this gate first, then the Definition of Done.
+- **[`definition-of-done`](../skills/definition-of-done/SKILL.md):** The post-implementation counterpart. The Readiness Brief's *Acceptance Criteria*, *Edge Cases*, and *Verification Plan* seed `done.md`, which the Definition of Done gate must empirically verify before the work is declared complete.
+- **[`definition-of-x`](../skills/definition-of-x/SKILL.md):** The orchestrator that runs this gate first, then the Definition of Done.

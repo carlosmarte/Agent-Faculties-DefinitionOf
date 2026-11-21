@@ -1,6 +1,6 @@
 # Installing the Definition of X (DoX) Faculties
 
-DoX ships as three skill folders. Each folder contains a `SKILL.md` plus supporting files (`INTERVIEW.md`, `assets/`), so **always install the whole folder**, never just `SKILL.md`.
+DoX ships as three skill folders. Each folder contains a `SKILL.md` plus supporting files (`INTERVIEW.md`, `assets/`), so **always install the whole folder**, never just `SKILL.md`. `definition-of-ready/` is at the repository root; `definition-of-x/` and `definition-of-done/` are under `skills/`.
 
 | Faculty | Role |
 |---|---|
@@ -8,13 +8,19 @@ DoX ships as three skill folders. Each folder contains a `SKILL.md` plus support
 | `definition-of-ready` | Pre-implementation gate. Writes `ready.md`. |
 | `definition-of-done` | Done criteria and post-implementation gate. Writes `done.md`. |
 
-Install **all three**. The orchestrator links to the other two by relative path (`../definition-of-ready/...`), so they must be siblings in the same skills directory.
+Install **all three**. The orchestrator links to the other two by relative path, so preserve the repository's directory layout when installing.
 
-In the commands below, set `FACULTIES` to this folder:
+In the commands below, set `FACULTIES` to the repository root:
 
 ```sh
-FACULTIES=/path/to/definition-of-x
+FACULTIES=/path/to/Agent-Faculties-DefinitionOf
 SKILLS=(definition-of-x definition-of-ready definition-of-done)
+skill_dir() {
+  case "$1" in
+    definition-of-ready) printf '%s\n' "$FACULTIES/definition-of-ready" ;;
+    *) printf '%s\n' "$FACULTIES/skills/$1" ;;
+  esac
+}
 ```
 
 **Symlink or copy?** A symlink keeps you on the latest version automatically. A copy is safer if your harness or sandbox does not follow symlinks, and it is required for project installs that teammates clone.
@@ -31,11 +37,11 @@ SKILLS=(definition-of-x definition-of-ready definition-of-done)
 ```sh
 # User scope (symlink)
 mkdir -p ~/.claude/skills
-for s in "${SKILLS[@]}"; do ln -sfn "$FACULTIES/$s" ~/.claude/skills/$s; done
+for s in "${SKILLS[@]}"; do ln -sfn "$(skill_dir "$s")" ~/.claude/skills/$s; done
 
 # Project scope (copy, then commit)
 mkdir -p .claude/skills
-for s in "${SKILLS[@]}"; do cp -R "$FACULTIES/$s" .claude/skills/; done
+for s in "${SKILLS[@]}"; do cp -R "$(skill_dir "$s")" .claude/skills/; done
 ```
 
 **Verify:** Start a new session and run `/definition-of-x`, or ask "Run the definition of ready on this task". The skill should load and ask *DoR or DoD?*
@@ -51,14 +57,14 @@ for s in "${SKILLS[@]}"; do cp -R "$FACULTIES/$s" .claude/skills/; done
 
 ```sh
 # Option A: built-in linker (creates symlinks in ~/.gemini/skills)
-gemini skills link "$FACULTIES"
+for s in "${SKILLS[@]}"; do gemini skills link "$(skill_dir "$s")"; done
 
 # Option B: built-in installer (user scope by default; add --scope workspace for the project)
-gemini skills install "$FACULTIES"
+for s in "${SKILLS[@]}"; do gemini skills install "$(skill_dir "$s")"; done
 
 # Option C: manual
 mkdir -p ~/.gemini/skills
-for s in "${SKILLS[@]}"; do ln -sfn "$FACULTIES/$s" ~/.gemini/skills/$s; done
+for s in "${SKILLS[@]}"; do ln -sfn "$(skill_dir "$s")" ~/.gemini/skills/$s; done
 ```
 
 **Verify:** Inside a session, run `/skills reload` and then `/skills list`. All three names should appear. Then ask "Start definition of x".
@@ -79,11 +85,11 @@ Skills work in the **Copilot CLI**, the **Copilot coding agent**, and **agent mo
 ```sh
 # Personal scope (symlink)
 mkdir -p ~/.copilot/skills
-for s in "${SKILLS[@]}"; do ln -sfn "$FACULTIES/$s" ~/.copilot/skills/$s; done
+for s in "${SKILLS[@]}"; do ln -sfn "$(skill_dir "$s")" ~/.copilot/skills/$s; done
 
 # Repository scope (copy, then commit; required for the cloud coding agent)
 mkdir -p .github/skills
-for s in "${SKILLS[@]}"; do cp -R "$FACULTIES/$s" .github/skills/; done
+for s in "${SKILLS[@]}"; do cp -R "$(skill_dir "$s")" .github/skills/; done
 ```
 
 **Verify:** Skills are discovered at session start, so open a **new** Copilot CLI session or agent-mode chat. Then ask "Use definition-of-x to get started" (in the CLI, `/skills` lists what is loaded).

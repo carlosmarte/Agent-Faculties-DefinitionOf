@@ -16,9 +16,9 @@ The *Definition of X* faculties are Agile quality gates that wrap every unit of 
 
 | Faculty | Entry point | When | Artifact |
 | --- | --- | --- | --- |
-| [`definition-of-x`](definition-of-x/SKILL.md) | `SKILL.md` | Getting started, resuming, or verifying a work item | Orchestrates the two below |
+| [`definition-of-x`](skills/definition-of-x/SKILL.md) | `SKILL.md` | Getting started, resuming, or verifying a work item | Orchestrates the two below |
 | [`definition-of-ready`](definition-of-ready/SKILL.md) | [`INTERVIEW.md`](definition-of-ready/INTERVIEW.md) | Before writing code | `.definition-of-x/<slug>/ready.md` |
-| [`definition-of-done`](definition-of-done/SKILL.md) | [`INTERVIEW.md`](definition-of-done/INTERVIEW.md) | Criteria before building, verification after | `.definition-of-x/<slug>/done.md` |
+| [`definition-of-done`](skills/definition-of-done/SKILL.md) | [`INTERVIEW.md`](skills/definition-of-done/INTERVIEW.md) | Criteria before building, verification after | `.definition-of-x/<slug>/done.md` |
 
 Each gate's `INTERVIEW.md` is the first interaction with the user. It inspects the repo first, asks short rounds of at most 4 questions with proposed defaults, and hands off to the gate in `SKILL.md`. Artifact templates live in each faculty's `assets/`.
 
@@ -40,9 +40,9 @@ See [`INSTALL.md`](INSTALL.md) for Claude Code, Gemini CLI, and GitHub Copilot. 
 
 ```sh
 # Claude Code (user-level)
-ln -s "$PWD/definition-of-x"     ~/.claude/skills/definition-of-x
+ln -s "$PWD/skills/definition-of-x" ~/.claude/skills/definition-of-x
 ln -s "$PWD/definition-of-ready" ~/.claude/skills/definition-of-ready
-ln -s "$PWD/definition-of-done"  ~/.claude/skills/definition-of-done
+ln -s "$PWD/skills/definition-of-done" ~/.claude/skills/definition-of-done
 ```
 
 ## Adding a faculty

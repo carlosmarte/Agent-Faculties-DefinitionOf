@@ -112,5 +112,5 @@ Persist every gate outcome (`DONE`, `NOT DONE`, or `PARTIALLY VERIFIED — ENVIR
 
 ## Related Faculties
 
-- **[`definition-of-ready`](../definition-of-ready/SKILL.md):** The pre-implementation counterpart. Its `ready.md` seeds this faculty's interview. *Scope Boundaries*, *Acceptance Criteria*, and *Verification Plan* flow into `done.md` Part 1.
+- **[`definition-of-ready`](../../definition-of-ready/SKILL.md):** The pre-implementation counterpart. Its `ready.md` seeds this faculty's interview. *Scope Boundaries*, *Acceptance Criteria*, and *Verification Plan* flow into `done.md` Part 1.
 - **[`definition-of-x`](../definition-of-x/SKILL.md):** The orchestrator that runs the Definition of Ready first, then this gate.
